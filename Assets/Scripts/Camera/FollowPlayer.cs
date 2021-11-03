@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace Camera
 {
@@ -8,20 +9,15 @@ namespace Camera
 }
 public class FollowPlayer : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 offset;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform player;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] [Range(0.1f, 0.5f)] 
+    private float smoothSpeed;
+    private Vector3 velocity = Vector3.zero;
+    
+    private void LateUpdate()
     {
-        // empty cuz we dont need it lol
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = new Vector3(
-            player.position.x + offset.x, 
-            player.position.y + offset.y, 
-            player.position.z + offset.z);
+        var desPos = player.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, desPos, ref velocity, smoothSpeed);
     }
 }
