@@ -6,7 +6,7 @@ public class GameManager : GameBehavior
 {
     private GameObject _player;
     
-    private void Start()
+    private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
     }
