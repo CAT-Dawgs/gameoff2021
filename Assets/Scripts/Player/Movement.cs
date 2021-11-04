@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-namespace Player { };
 public class Movement : GameBehavior
 {
-    private CharacterController _controller;
     public float speed = 3.0F;
-    
-    private void Start()
-    {
-        // useful if we add physics but idk
-        _controller = gameObject.AddComponent<CharacterController>();
-    }
     
     private void Update()
     {
