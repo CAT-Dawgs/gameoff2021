@@ -1,4 +1,6 @@
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : GameBehavior
 {
@@ -23,6 +25,16 @@ public class GameManager : GameBehavior
     public bool GetPaused()
     {
         return _isPaused;
+    }
+
+    public void FadeOut(Image img, float duration)
+    {
+        img.DOFade(0f, duration);
+    }
+
+    public void FadeIn()
+    {
+        
     }
     
 }
