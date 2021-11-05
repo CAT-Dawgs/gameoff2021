@@ -26,5 +26,6 @@ public class GameBehavior : MonoBehaviour {
     private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         _gameManager.Clear();
+        _musicManager.Clear();
     }
 }
