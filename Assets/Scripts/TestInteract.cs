@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TestInteract : GameBehavior, IInteractable
@@ -7,12 +5,12 @@ public class TestInteract : GameBehavior, IInteractable
     [SerializeField] [Range(0.01F, 10F)]
     private float distance = 0.5F;
     private Transform _player;
-    void Start()
+    private void Start()
     {
         _player = GameManager.GetPlayer().transform;
     }
 
-    void Update()
+    private void Update()
     {
         var playerDistance = Vector3.Distance(_player.position, this.gameObject.transform.position);
         
