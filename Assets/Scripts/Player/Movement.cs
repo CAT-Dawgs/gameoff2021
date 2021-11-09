@@ -3,7 +3,8 @@ using UnityEngine;
 public class Movement : GameBehavior
 {
     public float speed = 3.0F;
-    private Animator _animator;
+    [SerializeField] private Transform _transform;
+    [SerializeField] private Animator _animator;
     private SpriteRenderer _renderer;
 
     private void Start()
@@ -20,13 +21,18 @@ public class Movement : GameBehavior
         // always multi by Time.deltaTime
         transform.position += move * speed * Time.deltaTime;
 
-        if (move == Vector3.zero)
+        if (move[0] == -1)
+        {
+            _transform.localScale = new Vector3(-0.2f, 0.2f, 1f);
+            _animator.SetBool("IsWalking", true);            
+        }
+        else if (move[0] == 1)
+        {
+            _transform.localScale =  new Vector3(0.2f, 0.2f, 1f);
+            _animator.SetBool("IsWalking", true);
+        }else
         {
             _animator.SetBool("IsWalking", false);
-        }
-        else
-        {
-            _animator.SetBool("IsWalking", true);
         }
     }
 
