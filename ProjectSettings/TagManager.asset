@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EvidenceInteractable
   - PopUpUI
+  - FadeToBlack
   layers:
   - Default
   - TransparentFX
