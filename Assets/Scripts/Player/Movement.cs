@@ -21,12 +21,12 @@ public class Movement : GameBehavior
         // always multi by Time.deltaTime
         transform.position += move * speed * Time.deltaTime;
 
-        if (move[0] == -1)
+        if (move.x < 0)
         {
             _transform.localScale = new Vector3(-0.2f, 0.2f, 1f);
             _animator.SetBool("IsWalking", true);            
         }
-        else if (move[0] == 1)
+        else if (move.x > 0)
         {
             _transform.localScale =  new Vector3(0.2f, 0.2f, 1f);
             _animator.SetBool("IsWalking", true);
