@@ -9,9 +9,6 @@ public class GameBehavior : MonoBehaviour {
     // gets the game manager
     protected CachedComponent<GameManager> _gameManager = new CachedComponent<GameManager>();
     protected GameManager GameManager => _gameManager.Instance(this);
-    
-    protected CachedComponent<MusicManager> _musicManager = new CachedComponent<MusicManager>();
-    protected MusicManager MusicManager => _musicManager.Instance(this);
 
     private void OnEnable()
     {
@@ -26,6 +23,5 @@ public class GameBehavior : MonoBehaviour {
     private void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         _gameManager.Clear();
-        _musicManager.Clear();
     }
 }

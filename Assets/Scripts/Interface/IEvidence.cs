@@ -1,18 +1,18 @@
 ﻿public interface IEvidence
 {
-    string Name
+    string name
     {
         get;
         set;
     }
 
-    int ID
+    int id
     {
         get;
         set;
     }
 
-    string Lore
+    string lore
     {
         get;
         set;
