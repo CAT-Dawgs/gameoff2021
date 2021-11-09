@@ -3,8 +3,8 @@ using UnityEngine;
 public class Movement : GameBehavior
 {
     public float speed = 3.0F;
-    [SerializeField] private Transform _transform;
-    [SerializeField] private Animator _animator;
+    private Transform _transform;
+    private Animator _animator;
     private SpriteRenderer _renderer;
 
     private void Start()
@@ -12,6 +12,7 @@ public class Movement : GameBehavior
         Physics.gravity = new Vector2(0, 0);
         _animator = gameObject.GetComponent<Animator>();
         _renderer = gameObject.GetComponent<SpriteRenderer>();
+        _transform = gameObject.GetComponent<Transform>();
     }
     private void Update()
     {
