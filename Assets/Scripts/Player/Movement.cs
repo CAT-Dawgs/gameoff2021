@@ -3,9 +3,12 @@ using UnityEngine;
 public class Movement : GameBehavior
 {
     public float speed = 3.0F;
+    public Rigidbody2D rb;
     private Transform _transform;
     private Animator _animator;
     private SpriteRenderer _renderer;
+
+    public float jumpForce = 20f;
 
     private void Start()
     {
@@ -35,10 +38,22 @@ public class Movement : GameBehavior
         {
             _animator.SetBool("IsWalking", false);
         }
+
+        //jump key is spacebar
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
     }
 
     private Vector3 OnLadder()
     {
         return new Vector3(0, Input.GetAxis("Vertical"), 0);
+    }
+
+    void Jump() {
+        Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
+
+        rb.velocity = movement;
     }
 }

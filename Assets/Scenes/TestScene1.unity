@@ -943,8 +943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  _transform: {fileID: 1485069488}
-  _animator: {fileID: 1485069487}
+  rb: {fileID: 1485069489}
+  jumpForce: 10
 --- !u!95 &1485069487
 Animator:
   serializedVersion: 3
