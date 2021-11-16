@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Interact : MonoBehaviour {
+	[SerializeField] private Image customImage;
+	
+	//[SerializeField] [Range(0.01F, 10F)]
+    //private float distance = 0.5F;
+    //private Transform _player;
+	
+	private void Start(){
+		customImage.enabled = false;
+    }
+
+	//private void Update()
+    //{
+      //  var playerDistance = Vector3.Distance(_player.position, this.gameObject.transform.position);
+        
+        //if (distance >= playerDistance)
+        //{
+            //OnTriggerEnter();
+        //}
+    //}
+	
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.CompareTag("Player")){
+			customImage.enabled = true;
+		}
+	}
+	void OnTriggerExit2D(Collider2D other){
+		if(other.CompareTag("Player")){
+			customImage.enabled = false;
+		}
+	}
+}
