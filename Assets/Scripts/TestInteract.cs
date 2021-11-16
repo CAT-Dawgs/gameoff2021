@@ -18,15 +18,21 @@ public class TestInteract : GameBehavior, IInteractable
         {
             OnStartInteract();
         }
+        else
+        {
+            OnEndInteract();
+        }
     }
 
     public void OnStartInteract()
     {
-        Input.GetAxis("Vertical");
+        ChatManager.EnableChatBox();
+        ChatManager.SetChatBoxText("You notice that there isn't much in this room. \n Just a \"lamp\", whatever that is.");
     }
 
     public void OnEndInteract()
     {
-        Debug.Log("Lol it finished running");
+        ChatManager.DisableChatBox();
+        ChatManager.ClearText();
     }
 }

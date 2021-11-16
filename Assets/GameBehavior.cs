@@ -13,6 +13,9 @@ public class GameBehavior : MonoBehaviour {
     protected CachedComponent<MusicManager> _musicManager = new CachedComponent<MusicManager>();
     protected MusicManager MusicManager => _musicManager.Instance(this);
 
+    protected CachedComponent<ChatManager> _chatManager = new CachedComponent<ChatManager>();
+    protected ChatManager ChatManager => _chatManager.Instance(this);
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
@@ -27,5 +30,6 @@ public class GameBehavior : MonoBehaviour {
     {
         _gameManager.Clear();
         _musicManager.Clear();
+        _chatManager.Clear();
     }
 }
