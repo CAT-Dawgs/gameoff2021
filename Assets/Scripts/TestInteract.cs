@@ -27,7 +27,7 @@ public class TestInteract : GameBehavior, IInteractable
     public void OnStartInteract()
     {
         ChatManager.EnableChatBox();
-        ChatManager.SetChatBoxText("Hey lol");
+        ChatManager.SetChatBoxText("You notice that there isn't much in this room. \n Just a \"lamp\", whatever that is.");
     }
 
     public void OnEndInteract()
