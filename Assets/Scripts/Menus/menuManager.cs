@@ -38,6 +38,7 @@ public class menuManager : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("TestScene1");
+        Time.timeScale = 1f;
     }public void NewGame()
     {
 
