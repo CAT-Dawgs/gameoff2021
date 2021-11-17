@@ -6,64 +6,63 @@ using UnityEngine.SceneManagement;
 
 public class menuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject titleScreen;
-    [SerializeField] private GameObject optionsMenu;
-    [SerializeField] private GameObject pauseMenu;
-    //Currently when you select quit from the options menu after selecting it 
-    //from the pause menu it takes you back to title screen
+    [SerializeField] private GameObject _TitleScreen;
+    [SerializeField] protected GameObject _OptionsMenu;
+    
+    
     //Options Menu Variables
-    [SerializeField] private GameObject volume;
-    [SerializeField] private GameObject sfx;
-    [SerializeField] private GameObject music;
-    private float _volume;
-    private float _music;
-    private float _sfx;
-    //Title Screen Variables
+    [SerializeField] protected GameObject _Volume;
+    [SerializeField] protected GameObject _TextSpeed;
+    [SerializeField] protected GameObject _Music;
+    protected float Volume ;
+    protected float Music;
+    protected float TextSpeed;
+    
+    
 
 
 
     //Options Menu Methods
     public void OverallVolume()
     {
-        _volume = volume.GetComponent<Slider>().value;
-    }
-    public void SFXVolume()
+        
+    }public void SFXVolume()
     {
-        _sfx = sfx.GetComponent<Slider>().value;
-    }
-    public void MusicVolume()
+        
+    }public void MusicVolume()
     {
-        _music = music.GetComponent<Slider>().value;
+        
     }
 
     //Title Screen Methods
     public void LoadGame()
     {
         SceneManager.LoadScene("TestScene1");
-    }
-    public void NewGame()
+    }public void NewGame()
     {
 
-    }
-    public void QuitGame()
+    }public void QuitGame()
     {
 
     }
     //Pause Screen Methods
-    public void QuitFromPause()
-    {
-
-    }
-    public void ContinueFromPause()
-    {
-
-    }
+    
     //Extra Methods
     void Start() 
     {
-        titleScreen.SetActive(true);
-        optionsMenu.SetActive(false);
-        pauseMenu.SetActive(false);
+        _TitleScreen.SetActive(true);
+        _OptionsMenu.SetActive(false);
     }
-
+    public void SaveGame()
+    {
+        
+    }
+    void Update() 
+    {
+        Music = _Music.GetComponent<Slider>().value;
+        TextSpeed = _TextSpeed.GetComponent<Slider>().value;
+        Volume = _Volume.GetComponent<Slider>().value;
+        Debug.Log(Music);
+    }
+    
 }
