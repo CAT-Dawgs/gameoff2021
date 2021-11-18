@@ -7,31 +7,31 @@ using UnityEngine.SceneManagement;
 public class menuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _TitleScreen;
-    [SerializeField] private GameObject _OptionsMenu;
-    [SerializeField] private GameObject _PauseMenu;
-    //Currently when you select quit from the options menu after selecting it 
-    //from the pause menu it takes you back to title screen
+    [SerializeField] protected GameObject _OptionsMenu;
+    
+    
     //Options Menu Variables
-    [SerializeField] private GameObject _Volume;
-    [SerializeField] private GameObject _SFX;
-    [SerializeField] private GameObject _Music;
-    private float Volume;
-    private float Music;
-    private float SFX;
-    //Title Screen Variables
+    [SerializeField] protected GameObject _Volume;
+    [SerializeField] protected GameObject _TextSpeed;
+    [SerializeField] protected GameObject _Music;
+    protected float Volume ;
+    protected float Music;
+    protected float TextSpeed;
+    
+    
 
 
 
     //Options Menu Methods
     public void OverallVolume()
     {
-        Volume = _Volume.GetComponent<Slider>().value;
+        
     }public void SFXVolume()
     {
-        SFX = _SFX.GetComponent<Slider>().value;
+        
     }public void MusicVolume()
     {
-        Music = _Music.GetComponent<Slider>().value;
+        
     }
 
     //Title Screen Methods
@@ -46,19 +46,23 @@ public class menuManager : MonoBehaviour
 
     }
     //Pause Screen Methods
-    public void QuitFromPause()
-    {
-
-    }public void ContinueFromPause()
-    {
-
-    }
+    
     //Extra Methods
     void Start() 
     {
         _TitleScreen.SetActive(true);
         _OptionsMenu.SetActive(false);
-        _PauseMenu.SetActive(false);
     }
-
+    public void SaveGame()
+    {
+        
+    }
+    void Update() 
+    {
+        Music = _Music.GetComponent<Slider>().value;
+        TextSpeed = _TextSpeed.GetComponent<Slider>().value;
+        Volume = _Volume.GetComponent<Slider>().value;
+        Debug.Log(Music);
+    }
+    
 }
