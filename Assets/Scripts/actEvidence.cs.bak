@@ -9,11 +9,9 @@ public class actEvidence : MonoBehaviour
 	public bool collide = false;
 	public bool isPressed = false;
 	public GameObject evidenceObject;
-	private GameObject childObj;
 	
 	private void Start(){
 		evidenceObject.active = false;
-		childObj = evidenceObject.Find("Child Name");
 	}
 	
     private void Update(){
@@ -26,9 +24,6 @@ public class actEvidence : MonoBehaviour
 		if(collide == false || Input.GetKeyUp(KeyCode.E)){
 			isPressed = false;
 			hideEvidence();
-		}
-		if(evidenceObject.active == true){
-			childObj.active = true;
 		}
 	}
 	
