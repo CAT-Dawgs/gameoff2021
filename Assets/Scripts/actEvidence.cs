@@ -16,6 +16,7 @@ public class actEvidence : MonoBehaviour
 	//and for other "evidence" object
 	public bool collide = false;
 	public bool isPressed = false;
+	public bool toggle = false;
 	public GameObject evidenceObject;
 	
 	//disable evidence object from play space
@@ -28,11 +29,23 @@ public class actEvidence : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.E)){
 			if(collide == true){
 				isPressed = true;
-				showEvidence();
+				if(toggle == true){
+					toggle = false;
+				}
+				else{
+					toggle = true;
+				}
 			}
 		}
-		if(collide == false || Input.GetKeyUp(KeyCode.E)){
+		else if(collide == false){
 			isPressed = false;
+			toggle = false;
+			//hideEvidence();
+		}
+		if(toggle == true){
+			showEvidence();
+		}
+		else{
 			hideEvidence();
 		}
 	}
@@ -54,7 +67,6 @@ public class actEvidence : MonoBehaviour
 		}
 		if(Input.GetKeyUp(KeyCode.E)){
 			isPressed = false;
-			evidenceObject.active = false;
 		}
 	}
 	
