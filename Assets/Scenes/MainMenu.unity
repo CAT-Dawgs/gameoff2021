@@ -3629,9 +3629,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TitleScreen: {fileID: 631118484}
   _OptionsMenu: {fileID: 1368711824}
-  _Volume: {fileID: 0}
-  _TextSpeed: {fileID: 0}
-  _Music: {fileID: 0}
+  _Volume: {fileID: 1323289913}
+  _TextSpeed: {fileID: 1074307562}
+  _Music: {fileID: 1708651601}
 --- !u!4 &1989334044
 Transform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChatManager : GameBehavior
 {
@@ -30,6 +31,11 @@ public class ChatManager : GameBehavior
     public void SetChatBoxText(string text)
     {
         _tmpText.text = text;
+        // for (int i = 0; i < text.Length; i++)
+        // {
+        //     _tmpText.text = text.Substring(0,i);
+        //     yield return new WaitForSeconds(0.1f);
+        // }
     }
 
     /// <summary>
@@ -40,8 +46,9 @@ public class ChatManager : GameBehavior
         _chat = null;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         
     }
 }
+    

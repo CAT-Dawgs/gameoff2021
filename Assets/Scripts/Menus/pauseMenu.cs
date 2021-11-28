@@ -8,16 +8,7 @@ public class pauseMenu : menuManager
 {
    [SerializeField] private GameObject _PauseMenu;
    public static bool GameIsPaused = false;
-   public void OverallVolume()
-    {
-        
-    }public void SFXVolume()
-    {
-        
-    }public void MusicVolume()
-    {
-        
-    }public void QuitFromPause()
+   public void QuitFromPause()
     {
         SceneManager.LoadScene("MainMenu");
     }
@@ -50,12 +41,9 @@ public class pauseMenu : menuManager
     {
         _PauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;       
+        GameIsPaused = true;     
     }
-    public void SaveGame()
-    {
-        
-    }void Start() 
+    void Start() 
     {
         _PauseMenu.SetActive(false);
         _OptionsMenu.SetActive(false);
