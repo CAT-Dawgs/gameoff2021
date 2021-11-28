@@ -986,6 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isPressed: 0
+  toggle: 0
   evidenceObject: {fileID: 2079635234}
 --- !u!58 &233998199
 CircleCollider2D:
@@ -4225,6 +4226,7 @@ GameObject:
   - component: {fileID: 1542870071}
   - component: {fileID: 1542870073}
   - component: {fileID: 1542870072}
+  - component: {fileID: 1542870074}
   m_Layer: 5
   m_Name: CharacterText
   m_TagString: Untagged
@@ -4348,6 +4350,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542870070}
   m_CullTransparentMesh: 1
+--- !u!114 &1542870074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542870070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb68d2fd318fffc4b81b6bdd6be65b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeStart: 0
+  timeBtwChars: 0.01
+  leadingChar: 
+  leadingCharBeforeDelay: 0
 --- !u!1 &1560606477
 GameObject:
   m_ObjectHideFlags: 0
