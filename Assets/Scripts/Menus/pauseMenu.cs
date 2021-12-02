@@ -20,7 +20,6 @@ public class pauseMenu : menuManager
         Music = _Music.GetComponent<Slider>().value;
         TextSpeed = _TextSpeed.GetComponent<Slider>().value;
         Volume = _Volume.GetComponent<Slider>().value;
-        Debug.Log(Music);
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(GameIsPaused)
