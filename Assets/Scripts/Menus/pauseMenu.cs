@@ -33,6 +33,7 @@ public class pauseMenu : menuManager
     }public void Resume()
     {
         _PauseMenu.SetActive(false);
+        _OptionsMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
